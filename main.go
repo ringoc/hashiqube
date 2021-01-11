@@ -15,7 +15,7 @@ limitations under the License.
 */
 package main
 
-import "hashiqube/cmd"
+import "github.com/ringoc/hashiqube/cmd"
 
 func main() {
 	cmd.Execute()
