@@ -18,6 +18,7 @@ package cmd
 import (
 	"fmt"
 
+	"github.com/bmatcuk/go-vagrant"
 	"github.com/spf13/cobra"
 )
 
@@ -32,7 +33,19 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("UP Hashiqube!")
+		fmt.Println("hashiqube: \t UP ...")
+
+		fmt.Println("hashiqube: \t create Vagrant client ...")
+		client, _ := vagrant.NewVagrantClient(".")
+
+		fmt.Println("hashiqube: \t CREATE Vagrant UP command...")
+		upcmd := client.Up()
+
+		fmt.Println("hashiqube: \t SET Vagrant Verbose TRUE ...")
+		upcmd.Verbose = true
+
+		fmt.Println("hashiqube: \t RUN Vagrant UP command ...")
+		_ = upcmd.Run()
 	},
 }
 

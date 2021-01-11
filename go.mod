@@ -3,6 +3,7 @@ module hashiqube
 go 1.15
 
 require (
+	github.com/bmatcuk/go-vagrant v1.4.2
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
 	github.com/magiconair/properties v1.8.4 // indirect
 	github.com/mitchellh/go-homedir v1.1.0
